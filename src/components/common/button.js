@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
-  TouchableHightlight
+  TouchableHighlight
 } from 'react-native';
 
 module.exports = React.createClass({
   render: function() {
     return (
-      <TouchableHightlight 
+      <TouchableHighlight 
         style={ styles.button }
         underlayColor={ 'gray' }
         onPress={ this.props.onPress }
         >
         <Text style={ styles.buttonText }>{ this.props.text }</Text>
-      </TouchableHightlight>
+      </TouchableHighlight>
     );
   }
 });
