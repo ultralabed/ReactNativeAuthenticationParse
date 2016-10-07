@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 let Button = require('../common/button');
+let Parse = require('parse/react-native');
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -34,15 +35,16 @@ module.exports = React.createClass({
           value={ this.state.password }
           onChangeText={ (text) => {this.setState({ password: text })} }
           />
-
+        <Text>{ this.state.errorMessage }</Text>
         <Button text={ 'Sign In' } onPress={ this.onPress }/>
       </View>
     )
   },
   onPress: function() {
-    this.setState({
-      password: ''
-    })
+    Parse.User.logIn(this.state.username, this.state.password, {
+      success: (user) => { console.log(user); },
+      error: (data, error) => { this.setState({ errorMessage: error.message }); }
+    });
   }
 });
 

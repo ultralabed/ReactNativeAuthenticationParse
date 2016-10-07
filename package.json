@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "jscs": "^3.0.7",
+    "parse": "^1.9.2",
+    "parse-react": "^0.5.2",
     "react": "15.3.2",
     "react-native": "0.34.1"
   }
