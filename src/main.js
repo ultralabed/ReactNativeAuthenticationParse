@@ -6,10 +6,12 @@ import {
 let Parse = require('parse/react-native');
 let Signin = require('./components/authentication/signin');
 let Signup = require('./components/authentication/signup');
+let Tweets = require('./components/tweets/tweets');
 
 const ROUTES = {
   signin: Signin,
-  signup: Signup
+  signup: Signup,
+  tweets: Tweets
 };
 
 module.exports = React.createClass({
