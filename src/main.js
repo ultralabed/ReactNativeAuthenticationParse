@@ -5,9 +5,11 @@ import {
 } from 'react-native';
 let Parse = require('parse/react-native');
 let Signin = require('./components/authentication/signin');
+let Signup = require('./components/authentication/signup');
 
 const ROUTES = {
-  signin: Signin
+  signin: Signin,
+  signup: Signup
 };
 
 module.exports = React.createClass({
@@ -16,7 +18,7 @@ module.exports = React.createClass({
   },
   renderScene: function(route, navigator) {
     let Component = ROUTES[route.name];
-    return <Component />
+    return <Component route={ route } navigator={ navigator }/>
   },
   render: function() {
     return (
@@ -24,7 +26,7 @@ module.exports = React.createClass({
         style={ styles.container }
         initialRoute={ {name: 'signin'} }
         renderScene={ this.renderScene }
-        configureScene={ () => { return Navigator.SceneConfigs.FloatFromRight; } }
+        configureScene={ () => { return Navigator.SceneConfigs.FloatFromBottom; } }
         />
     )
   }
